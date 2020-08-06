@@ -1,0 +1,11 @@
+version: '3'
+services:
+  solr:
+    image: solr:8.5
+    container_name: 'solor_sample'
+    ports:
+      - "8983:8983"
+    volumes:
+      - ./solr/data:/var/solr/data
+      - ./solr/web.xml:/opt/solr-8.5.2/server/solr-webapp/webapp/WEB-INF/web.xml
+    restart: always
